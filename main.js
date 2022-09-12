@@ -1,10 +1,25 @@
 import * as fs from "fs"
 
 let location = "C:\\Users\\Emilis\\Desktop\\go"
-let lookingFor = "r"
+let lookingFor = "rrrr"
+
 
 //Scans the location supplied and returns all the folders that matched the query
 function FindMatchingFoldersInLocation(location, find) {
+    console.log("==========================");
+    // console.log(Object.values(fs));
+
+    let x = Object.keys(fs);
+
+    for (let i=0; i<x.length; i++) {
+        if (typeof fs[x[i]] !== "function") {continue}
+
+        console.log();
+    }
+
+    fs.appendFile("C:\\Users\\Emilis\\Desktop\\mynewfile.txt", Object.keys(fs).toString().replaceAll(",", "\n"), err => {
+        if (err) throw err;
+    })
     try {
         let x = fs.readdirSync(location)
 

@@ -5,7 +5,7 @@ function createVariableDump(v) {
 
     if (typeof v !== "object") {return "value supplied is not an object"}
 
-    let keys = Object.keys(v)
+    let keys = Object.getOwnPropertyNames(Object.getPrototypeOf(v))
     for (let i=0; i<keys.length; i++) {
         let key = keys[i];
         result[key] = {};
